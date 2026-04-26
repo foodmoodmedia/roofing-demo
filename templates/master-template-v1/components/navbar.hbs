@@ -1,0 +1,30 @@
+<nav id="navbar"><div class="nav-inner">
+  <a href="index.html" class="nav-logo"><span>{{business.short_name}}</span> {{business.name}}</a>
+  <div class="nav-links">
+    <a href="index.html" class="nav-link">Home</a>
+    <div class="nav-dropdown"><a href="services.html" class="nav-link">Services ▾</a>
+      <div class="nav-dropdown-menu">
+        {{#each services}}
+        <a href="{{url}}" class="nav-dropdown-item">{{icon}} {{name}}</a>
+        {{/each}}
+      </div>
+    </div>
+    <a href="gallery.html" class="nav-link">Gallery</a>
+    <a href="service-areas.html" class="nav-link">Service Areas</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+  </div>
+  <a href="tel:{{contact.phone_raw}}" class="nav-cta">📞 {{contact.phone}}</a>
+  <div class="nav-mobile-toggle" id="nav-toggle"><span></span><span></span><span></span></div>
+</div></nav>
+
+<div class="mobile-nav" id="mobile-nav"><button class="mobile-nav-close" id="mobile-close">✕</button>
+  <a href="index.html" class="mobile-nav-link">Home</a>
+  {{#each services}}
+  <a href="{{url}}" class="mobile-nav-link">{{name}}</a>
+  {{/each}}
+  <a href="gallery.html" class="mobile-nav-link">Gallery</a>
+  <a href="about.html" class="mobile-nav-link">About Us</a>
+  <a href="contact.html" class="mobile-nav-link">Contact</a>
+  <a href="tel:{{contact.phone_raw}}" class="btn btn-primary btn-lg" style="margin-top:16px">📞 Call Now</a>
+</div>

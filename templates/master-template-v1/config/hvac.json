@@ -1,0 +1,51 @@
+{
+  "business": {
+    "name": "Comfort Climate HVAC",
+    "short_name": "Comfort Climate",
+    "established_year": "2005",
+    "description": "24/7 Emergency AC & Heating repair. Keeping your family comfortable all year round.",
+    "long_description": "We understand that heating and cooling emergencies happen when you least expect them. That's why our certified technicians are on standby 24/7."
+  },
+  "contact": {
+    "phone": "(800) 555-HVAC",
+    "phone_raw": "8005554822",
+    "email": "help@comfortclimate.com",
+    "address": "Phoenix, AZ",
+    "whatsapp": "18005554822",
+    "whatsapp_message": "Hello! I need emergency AC service."
+  },
+  "theme": {
+    "primary_color": "#007BA7",
+    "secondary_color": "#FF8C00"
+  },
+  "hero": {
+    "badge": "❄️ 24/7 Fast Dispatch",
+    "heading_part1": "Perfect",
+    "heading_gradient": "Temperature",
+    "subtext": "Expert Air Conditioning and Heating repair, installation, and maintenance. We arrive in 60 minutes or less."
+  },
+  "cta": {
+    "primary_btn": "📞 Call for Service",
+    "secondary_btn": "📋 Book Online"
+  },
+  "seo": {
+    "title": "Comfort Climate | Fast HVAC & AC Repair",
+    "description": "24/7 Emergency HVAC services. Fast AC repair and heating installation."
+  },
+  "stats": {
+    "stat1_num": "60m",
+    "stat1_label": "Response Time",
+    "stat2_num": "3K+",
+    "stat2_label": "Systems Fixed",
+    "stat3_num": "20+",
+    "stat3_label": "Certified Techs"
+  },
+  "services": [
+    { "name": "AC Repair", "icon": "❄️", "url": "services.html#ac" },
+    { "name": "Heating Services", "icon": "🔥", "url": "services.html#heating" },
+    { "name": "Air Quality", "icon": "🌬️", "url": "services.html#air" }
+  ],
+  "socials": [
+    { "platform": "Facebook", "icon": "📘", "url": "#" }
+  ]
+}

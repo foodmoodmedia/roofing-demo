@@ -1,0 +1,51 @@
+{
+  "business": {
+    "name": "Glasgow Roofing",
+    "short_name": "Glasgow",
+    "established_year": "2012",
+    "description": "Your trusted local roofing experts in Glasgow. We protect what matters most with premium materials and flawless installation.",
+    "long_description": "Glasgow Roofing is dedicated to providing storm-ready, durable roofing solutions. We pride ourselves on delivering quality craftsmanship that stands the test of time."
+  },
+  "contact": {
+    "phone": "0141 482 7035",
+    "phone_raw": "01414827035",
+    "email": "info@glasgowroofing.co.uk",
+    "address": "Glasgow, Scotland",
+    "whatsapp": "01414827035",
+    "whatsapp_message": "Hello! I need a free roof inspection."
+  },
+  "theme": {
+    "primary_color": "#7CFC00",
+    "secondary_color": "#00FF7F"
+  },
+  "hero": {
+    "badge": "🏠 Licensed & Insured",
+    "heading_part1": "Unbeatable",
+    "heading_gradient": "Roof Defense",
+    "subtext": "From minor leak repairs to full roof replacements, we've covered over 1,500+ homes."
+  },
+  "cta": {
+    "primary_btn": "📞 Get Free Inspection",
+    "secondary_btn": "📋 View Our Work"
+  },
+  "seo": {
+    "title": "Elite Roofing Pros | Quality Roof Replacement & Repair",
+    "description": "Expert residential commercial roofing services. Free inspections."
+  },
+  "stats": {
+    "stat1_num": "12+",
+    "stat1_label": "Years Experience",
+    "stat2_num": "1.5K+",
+    "stat2_label": "Roofs Replaced",
+    "stat3_num": "4.9/5",
+    "stat3_label": "152 Reviews"
+  },
+  "services": [
+    { "name": "Roof Replacement", "icon": "🔨", "url": "services.html#replacement" },
+    { "name": "Leak Repair", "icon": "💧", "url": "services.html#repair" },
+    { "name": "Gutter Installation", "icon": "🌧️", "url": "services.html#gutters" }
+  ],
+  "socials": [
+    { "platform": "Facebook", "icon": "📘", "url": "#" }
+  ]
+}

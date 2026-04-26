@@ -1,0 +1,48 @@
+<footer style="background:#080808;border-top:1px solid rgba(255,69,0,.12);padding:60px 0 32px" role="contentinfo">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px">
+      <div>
+        <div style="font-family:'Sora',sans-serif;font-size:22px;font-weight:800;margin-bottom:14px"><span style="color:var(--red)">{{business.short_name}}</span> {{business.name}}</div>
+        <p style="font-size:13px;color:var(--gray);max-width:260px;line-height:1.7;margin-bottom:16px">{{business.description}}</p>
+        <a href="tel:{{contact.phone_raw}}" style="display:block;font-size:14px;color:var(--light);margin-bottom:8px">📞 {{contact.phone}}</a>
+        <a href="mailto:{{contact.email}}" style="display:block;font-size:13px;color:var(--gray)">✉️ {{contact.email}}</a>
+      </div>
+      <div>
+        <h5 style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--copper);margin-bottom:16px">Services</h5>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          {{#each services}}
+          <a href="{{url}}" style="font-size:13px;color:var(--gray);transition:color .2s" onmouseover="this.style.color='white'" onmouseout="this.style.color='var(--gray)'">{{name}}</a>
+          {{/each}}
+        </div>
+      </div>
+      <div>
+        <h5 style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--copper);margin-bottom:16px">Pages</h5>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <a href="gallery.html" style="font-size:13px;color:var(--gray);transition:color .2s" onmouseover="this.style.color='white'" onmouseout="this.style.color='var(--gray)'">Gallery</a>
+          <a href="service-areas.html" style="font-size:13px;color:var(--gray);transition:color .2s" onmouseover="this.style.color='white'" onmouseout="this.style.color='var(--gray)'">Service Areas</a>
+          <a href="about.html" style="font-size:13px;color:var(--gray);transition:color .2s" onmouseover="this.style.color='white'" onmouseout="this.style.color='var(--gray)'">About Us</a>
+          <a href="contact.html" style="font-size:13px;color:var(--gray);transition:color .2s" onmouseover="this.style.color='white'" onmouseout="this.style.color='var(--gray)'">Contact</a>
+        </div>
+      </div>
+      <div>
+        <h5 style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--copper);margin-bottom:16px">Locations</h5>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <a href="service-areas.html" style="font-size:13px;color:var(--gray)">{{contact.address}}</a>
+          <a href="service-areas.html" style="font-size:13px;color:var(--gray);color:var(--copper)">View Service Areas →</a>
+        </div>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,.06);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
+      <p style="font-size:12px;color:var(--gray)">© 2026 {{business.name}} Corp. All rights reserved. <span style="margin-left:8px"><a href="privacy-policy.html" style="transition:color .2s" onmouseover="this.style.color='white'" onmouseout="this.style.color=''">Privacy Policy</a> &nbsp;|&nbsp; <a href="terms.html" style="transition:color .2s" onmouseover="this.style.color='white'" onmouseout="this.style.color=''">Terms of Service</a></span></p>
+      <div style="display:flex;gap:12px">
+        {{#each socials}}
+        <a href="{{url}}" target="_blank" rel="noopener noreferrer" style="width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:16px;transition:all .25s" aria-label="Follow {{../business.short_name}} on {{platform}}" onmouseover="this.style.background='var(--red)'" onmouseout="this.style.background='rgba(255,255,255,.06)'">{{icon}}</a>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a href="tel:{{contact.phone_raw}}" id="sticky-call" aria-label="Call {{business.short_name}}">📞</a>
+<a href="https://wa.me/{{contact.whatsapp}}?text={{contact.whatsapp_message}}" id="whatsapp-btn" aria-label="WhatsApp" target="_blank">💬</a>
+<script src="js/main.js"></script>

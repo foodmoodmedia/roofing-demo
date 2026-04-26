@@ -1,0 +1,51 @@
+{
+  "business": {
+    "name": "Bright Smiles Dental Care",
+    "short_name": "Bright Smiles",
+    "established_year": "2018",
+    "description": "Gentle, pain-free dentistry for the whole family. Your brightest smile starts here.",
+    "long_description": "We believe visiting the dentist should be a relaxing, comfortable experience. We use state-of-the-art technology to provide painless, precision dental care."
+  },
+  "contact": {
+    "phone": "(305) 555-TEETH",
+    "phone_raw": "3055558338",
+    "email": "hello@brightsmiles.com",
+    "address": "Miami, FL",
+    "whatsapp": "13055558338",
+    "whatsapp_message": "Hello! I want to book a dental appointment."
+  },
+  "theme": {
+    "primary_color": "#00B4D8",
+    "secondary_color": "#90E0EF"
+  },
+  "hero": {
+    "badge": "🦷 Accepting New Patients",
+    "heading_part1": "Your Best",
+    "heading_gradient": "Smile Yet",
+    "subtext": "Experience anxiety-free, gentle dental care. From routine cleanings to complete smile makeovers."
+  },
+  "cta": {
+    "primary_btn": "📞 Book Appointment",
+    "secondary_btn": "📋 View Treatments"
+  },
+  "seo": {
+    "title": "Bright Smiles Dental Care | Gentle Dentistry",
+    "description": "Top-rated family and cosmetic dentistry. Pain-free treatments."
+  },
+  "stats": {
+    "stat1_num": "4.9",
+    "stat1_label": "Google Rating",
+    "stat2_num": "5K+",
+    "stat2_label": "Happy Smiles",
+    "stat3_num": "100%",
+    "stat3_label": "Pain-Free Focus"
+  },
+  "services": [
+    { "name": "Cosmetic Dentistry", "icon": "✨", "url": "services.html#cosmetic" },
+    { "name": "General Cleanings", "icon": "🪥", "url": "services.html#cleaning" },
+    { "name": "Emergency Care", "icon": "🚑", "url": "services.html#emergency" }
+  ],
+  "socials": [
+    { "platform": "Instagram", "icon": "📸", "url": "#" }
+  ]
+}

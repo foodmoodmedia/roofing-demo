@@ -1,0 +1,53 @@
+{
+  "business": {
+    "name": "K&R General Services",
+    "short_name": "K&R",
+    "established_year": "2009",
+    "description": "South Florida's premier home transformation company. Trusted by 2,000+ homeowners since 2009.",
+    "long_description": "We started with a simple belief: every homeowner deserves a company they can truly trust. With nothing but hard work and an unwavering commitment to quality, we built something extraordinary."
+  },
+  "contact": {
+    "phone": "(954) 297-4439",
+    "phone_raw": "9542974439",
+    "email": "kandrgeneralservices@gmail.com",
+    "address": "Deerfield Beach, FL",
+    "whatsapp": "19542974439",
+    "whatsapp_message": "Hello! I would like to get a free estimate."
+  },
+  "theme": {
+    "primary_color": "#FF4500",
+    "secondary_color": "#E8B4A1"
+  },
+  "hero": {
+    "badge": "👥 Rated #1 in Florida",
+    "heading_part1": "Premium Home",
+    "heading_gradient": "Transformations",
+    "subtext": "Trusted by over 2,000+ homeowners. We deliver pristine results with unmatched reliability."
+  },
+  "cta": {
+    "primary_btn": "📞 CALL (954) 297-4439",
+    "secondary_btn": "📋 Request Online Quote"
+  },
+  "seo": {
+    "title": "K&R General Services | Premier Home Transformations",
+    "description": "Serving South Florida homeowners with premium exterior maintenance and property transformation."
+  },
+  "stats": {
+    "stat1_num": "15+",
+    "stat1_label": "Years Serving FL",
+    "stat2_num": "700+",
+    "stat2_label": "5-Star Reviews",
+    "stat3_num": "2K+",
+    "stat3_label": "Happy Customers"
+  },
+  "services": [
+    { "name": "Roof Cleaning", "icon": "🏠", "url": "services/roof-cleaning.html" },
+    { "name": "Pressure Washing", "icon": "💧", "url": "services/pressure-washing.html" },
+    { "name": "Driveway Cleaning", "icon": "🛣️", "url": "services/driveway-cleaning.html" },
+    { "name": "Exterior Painting", "icon": "🎨", "url": "services/exterior-painting.html" }
+  ],
+  "socials": [
+    { "platform": "Facebook", "icon": "📘", "url": "#" },
+    { "platform": "Instagram", "icon": "📸", "url": "https://www.instagram.com/kandrgeneralservices" }
+  ]
+}
