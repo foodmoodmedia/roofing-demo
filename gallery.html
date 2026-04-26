@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Transformation Gallery | Your Business | Before & After Results</title>
+  <meta name="description" content="See Your Business's stunning before & after transformations. Roof cleaning, repair, and property maintenance results from real homeowners in Your City."/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <style>
+    .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    @media(max-width:768px){.gallery-grid{grid-template-columns:1fr}}
+    @media(max-width:1024px) and (min-width:769px){.gallery-grid{grid-template-columns:repeat(2,1fr)}}
+    .gallery-section-label{font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--red);margin-bottom:24px;padding-bottom:12px;border-bottom:1px solid rgba(255,107,0,.2)}
+  </style>
+</head>
+<body>
+<nav id="navbar"><div class="nav-inner">
+  <a href="index.html" class="nav-logo"><span>Your City</span> General Services</a>
+  <div class="nav-links">
+    <a href="index.html" class="nav-link">Home</a>
+    <div class="nav-dropdown"><a href="services/roof-cleaning.html" class="nav-link">Services ▾</a>
+      <div class="nav-dropdown-menu">
+        <a href="services/roof-cleaning.html" class="nav-dropdown-item">🏠 Roof Cleaning</a>
+        <a href="services/pressure-washing.html" class="nav-dropdown-item">💧 Pressure Washing</a>
+        <a href="services/driveway-cleaning.html" class="nav-dropdown-item">🛣️ Driveway Cleaning</a>
+        <a href="services/exterior-painting.html" class="nav-dropdown-item">🎨 Painting</a>
+      </div>
+    </div>
+    <a href="gallery.html" class="nav-link active">Gallery</a>
+    <a href="service-areas.html" class="nav-link">Service Areas</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+  </div>
+    <a href="tel:01414827035" class="nav-cta">📞 +1 (555) 000-0000</a>
+  <div class="nav-mobile-toggle" id="nav-toggle"><span></span><span></span><span></span></div>
+</div></nav>
+<div class="mobile-nav" id="mobile-nav"><button class="mobile-nav-close" id="mobile-close">✕</button>
+  <a href="index.html" class="mobile-nav-link">Home</a><a href="services/roof-cleaning.html" class="mobile-nav-link">Services</a>
+  <a href="gallery.html" class="mobile-nav-link">Gallery</a><a href="service-areas.html" class="mobile-nav-link">Service Areas</a>
+  <a href="about.html" class="mobile-nav-link">About</a><a href="contact.html" class="mobile-nav-link">Contact</a>
+  <a href="tel:01414827035" class="btn btn-primary btn-lg" style="margin-top:16px">📞 Call Now</a>
+</div>
+
+<section class="page-hero">
+  <div class="page-hero-orb page-hero-orb-1" aria-hidden="true"></div>
+  <div class="page-hero-orb page-hero-orb-2" aria-hidden="true"></div>
+  <div class="container"><div class="page-hero-content">
+    <div class="breadcrumb"><a href="index.html">Home</a><span class="breadcrumb-sep">/</span><span>Gallery</span></div>
+    <div class="page-hero-badge">📸 Real Transformations</div>
+    <h1>See the <span class="gradient-text">Your Business Difference</span></h1>
+    <p>Every slider tells a real story. Drag to reveal the stunning before &amp; after results from homeowners across Your City.</p>
+  </div></div>
+</section>
+
+<section class="section" style="background:var(--bg)">
+  <div class="container">
+    <!-- FILTER -->
+    <div class="gallery-filter reveal">
+      <button class="filter-btn active" data-filter="all">All Services</button>
+      <button class="filter-btn" data-filter="roof">🏠 Roof Cleaning</button>
+      <button class="filter-btn" data-filter="driveway">🛣️ Driveway</button>
+      <button class="filter-btn" data-filter="painting">🎨 Painting</button>
+      <button class="filter-btn" data-filter="pressure">💧 Pressure Washing</button>
+    </div>
+
+    <!-- ROOF CLEANING -->
+    <div class="reveal"><div class="gallery-section-label">🏠 Roof Cleaning Results</div></div>
+    <div class="gallery-grid" style="margin-bottom:60px">
+      <article class="ba-card reveal stagger-1" data-category="roof">
+        <div class="ba-slider-wrap" data-slider>
+          <img class="ba-img ba-before-img" src="images/roof-before.jpg" alt="Dirty, mold-covered roof before cleaning"/>
+          <img class="ba-img ba-after-img" src="images/roof-after.jpg" alt="Clean, pristine roof after Your City soft-wash"/>
+          <div class="ba-divider"></div><div class="ba-handle">⟺</div>
+          <div class="ba-label-before">BEFORE</div><div class="ba-label-after">AFTER</div>
+        </div>
+        <div class="ba-info"><div class="ba-tag">Soft-Wash Cleaning</div><h3 class="ba-title">Shingle Roof Restoration</h3><p class="ba-stat">✨ Boca Raton, FL — Added 15+ Years Life</p></div>
+      </article>
+      <article class="ba-card reveal stagger-2" data-category="roof">
+        <div class="ba-slider-wrap" data-slider>
+          <img class="ba-img ba-before-img" src="images/roof-before.jpg" alt="Algae-covered tile roof before cleaning"/>
+          <img class="ba-img ba-after-img" src="images/roof-after.jpg" alt="Sparkling tile roof after Your City treatment"/>
+          <div class="ba-divider"></div><div class="ba-handle">⟺</div>
+          <div class="ba-label-before">BEFORE</div><div class="ba-label-after">AFTER</div>
+        </div>
+        <div class="ba-info"><div class="ba-tag">Tile Roof</div><h3 class="ba-title">Algae &amp; Mold Elimination</h3><p class="ba-stat">✨ Coral Springs, FL — 100% Algae Removed</p></div>
+      </article>
+      <article class="ba-card reveal stagger-3" data-category="roof">
+        <div class="ba-slider-wrap" data-slider>
+          <img class="ba-img ba-before-img" src="images/roof-before.jpg" alt="Stained flat roof before cleaning"/>
+          <img class="ba-img ba-after-img" src="images/roof-after.jpg" alt="Clean flat roof after Your City service"/>
+          <div class="ba-divider"></div><div class="ba-handle">⟺</div>
+          <div class="ba-label-before">BEFORE</div><div class="ba-label-after">AFTER</div>
+        </div>
+        <div class="ba-info"><div class="ba-tag">Flat Roof Clean</div><h3 class="ba-title">Flat Roof Deep Clean</h3><p class="ba-stat">✨ Parkland, FL — Like New Condition</p></div>
+      </article>
+    </div>
+
+    <!-- DRIVEWAY -->
+    <div class="reveal"><div class="gallery-section-label">🛣️ Driveway &amp; Patio Cleaning</div></div>
+    <div class="gallery-grid" style="margin-bottom:60px">
+      <article class="ba-card reveal stagger-1" data-category="driveway">
+        <div class="ba-slider-wrap" data-slider>
+          <img class="ba-img ba-before-img" src="images/driveway-before.jpg" alt="Heavily stained driveway before pressure washing"/>
+          <img class="ba-img ba-after-img" src="images/driveway-after.jpg" alt="Pristine driveway after Your City pressure washing"/>
+          <div class="ba-divider"></div><div class="ba-handle">⟺</div>
+          <div class="ba-label-before">BEFORE</div><div class="ba-label-after">AFTER</div>
+        </div>
+        <div class="ba-info"><div class="ba-tag">Concrete Driveway</div><h3 class="ba-title">Oil &amp; Stain Removal</h3><p class="ba-stat">⚡ Delray Beach, FL — Completed in 2 Hours</p></div>
+      </article>
+      <article class="ba-card reveal stagger-2" data-category="pressure">
+        <div class="ba-slider-wrap" data-slider>
+          <img class="ba-img ba-before-img" src="images/driveway-before.jpg" alt="Grimy patio pavers before cleaning"/>
+          <img class="ba-img ba-after-img" src="images/driveway-after.jpg" alt="Beautiful clean patio pavers after Your City"/>
+          <div class="ba-divider"></div><div class="ba-handle">⟺</div>
+          <div class="ba-label-before">BEFORE</div><div class="ba-label-after">AFTER</div>
+        </div>
+        <div class="ba-info"><div class="ba-tag">Pool Deck &amp; Patio</div><h3 class="ba-title">Paver Patio Restoration</h3><p class="ba-stat">⚡ Weston, FL — Ready to Entertain Again</p></div>
+      </article>
+      <article class="ba-card reveal stagger-3" data-category="driveway">
+        <div class="ba-slider-wrap" data-slider>
+          <img class="ba-img ba-before-img" src="images/driveway-before.jpg" alt="Stained sidewalk before pressure washing"/>
+          <img class="ba-img ba-after-img" src="images/driveway-after.jpg" alt="Clean sidewalk after Your City pressure washing"/>
+          <div class="ba-divider"></div><div class="ba-handle">⟺</div>
+          <div class="ba-label-before">BEFORE</div><div class="ba-label-after">AFTER</div>
+        </div>
+        <div class="ba-info"><div class="ba-tag">Walkway &amp; Sidewalk</div><h3 class="ba-title">Sidewalk Deep Clean</h3><p class="ba-stat">⚡ Pompano Beach, FL — Instant Results</p></div>
+      </article>
+    </div>
+
+    <!-- PAINTING -->
+    <div class="reveal"><div class="gallery-section-label">🎨 Exterior Painting Results</div></div>
+    <div class="gallery-grid">
+      <article class="ba-card reveal stagger-1" data-category="painting">
+        <div class="ba-slider-wrap" data-slider>
+          <img class="ba-img ba-before-img" src="images/painting-before.jpg" alt="Faded, weathered exterior before painting"/>
+          <img class="ba-img ba-after-img" src="images/painting-after.jpg" alt="Beautifully painted exterior after Your City"/>
+          <div class="ba-divider"></div><div class="ba-handle">⟺</div>
+          <div class="ba-label-before">BEFORE</div><div class="ba-label-after">AFTER</div>
+        </div>
+        <div class="ba-info"><div class="ba-tag">Full Exterior</div><h3 class="ba-title">Complete Home Transformation</h3><p class="ba-stat">🏡 Fort Lauderdale, FL — Completed in 3 Days</p></div>
+      </article>
+      <article class="ba-card reveal stagger-2" data-category="painting">
+        <div class="ba-slider-wrap" data-slider>
+          <img class="ba-img ba-before-img" src="images/painting-before.jpg" alt="Peeling, old paint on house before painting"/>
+          <img class="ba-img ba-after-img" src="images/painting-after.jpg" alt="Fresh premium paint on house after Your City"/>
+          <div class="ba-divider"></div><div class="ba-handle">⟺</div>
+          <div class="ba-label-before">BEFORE</div><div class="ba-label-after">AFTER</div>
+        </div>
+        <div class="ba-info"><div class="ba-tag">Peeling Paint Repair</div><h3 class="ba-title">Premium Paint &amp; Repair</h3><p class="ba-stat">🏡 Boca Raton, FL — Increased Home Value</p></div>
+      </article>
+      <article class="ba-card reveal stagger-3" data-category="painting">
+        <div class="ba-slider-wrap" data-slider>
+          <img class="ba-img ba-before-img" src="images/painting-before.jpg" alt="Dull exterior before color update"/>
+          <img class="ba-img ba-after-img" src="images/painting-after.jpg" alt="Vibrant refreshed exterior after Your City painting"/>
+          <div class="ba-divider"></div><div class="ba-handle">⟺</div>
+          <div class="ba-label-before">BEFORE</div><div class="ba-label-after">AFTER</div>
+        </div>
+        <div class="ba-info"><div class="ba-tag">Color Refresh</div><h3 class="ba-title">Modern Color Update</h3><p class="ba-stat">🏡 Scotland Gardens — Neighbors Love It</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<div style="background:linear-gradient(135deg,#FF6B00,#00FF7F);padding:80px 40px;text-align:center">
+  <h2 style="font-family:'Sora',sans-serif;font-size:clamp(24px,3vw,40px);color:white;margin-bottom:12px;font-weight:800">Your Home Could Be Next</h2>
+  <p style="color:rgba(255,255,255,.9);font-size:16px;margin-bottom:28px">Join 2,000+ Your City homeowners who've experienced the Your City transformation.</p>
+  <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+    <a href="tel:01414827035" style="background:#0F0F0F;color:var(--red);border:2px solid var(--red);padding:14px 32px;border-radius:12px;font-size:14px;font-weight:800;letter-spacing:1px;text-transform:uppercase;display:inline-flex;align-items:center;gap:8px">📞 CALL +1 (555) 000-0000</a>
+    <a href="contact.html" style="background:rgba(255,255,255,.15);color:white;border:2px solid rgba(255,255,255,.4);padding:14px 32px;border-radius:12px;font-size:14px;font-weight:700;letter-spacing:1px;text-transform:uppercase;display:inline-flex;align-items:center;gap:8px">📋 GET FREE ESTIMATE</a>
+  </div>
+</div>
+<footer style="background:#080808;border-top:1px solid rgba(255,107,0,.12);padding:60px 0 32px" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div style="font-family:'Sora',sans-serif;font-size:22px;font-weight:800;margin-bottom:14px"><span style="color:var(--red)">Your City</span> Roofing</div>
+        <p style="font-size:13px;color:var(--gray);max-width:260px;line-height:1.7;margin-bottom:16px">Your City's premier home transformation company. Trusted by local homeowners for quality roofing and cleaning.</p>
+        <a href="tel:01414827035" style="display:block;font-size:14px;color:var(--light);margin-bottom:8px">📞 +1 (555) 000-0000</a>
+        <a href="mailto:hello@yourwebsite.com" style="display:block;font-size:13px;color:var(--gray)">✉️ hello@yourwebsite.com</a>
+      </div>
+      <div>
+        <h5 style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--copper);margin-bottom:16px">Services</h5>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <a href="services/roof-cleaning.html" style="font-size:13px;color:var(--gray);transition:color .2s" onmouseover="this.style.color='white'" onmouseout="this.style.color='var(--gray)'">Roof Cleaning</a>
+          <a href="services/pressure-washing.html" style="font-size:13px;color:var(--gray);transition:color .2s" onmouseover="this.style.color='white'" onmouseout="this.style.color='var(--gray)'">Pressure Washing</a>
+          <a href="services/driveway-cleaning.html" style="font-size:13px;color:var(--gray);transition:color .2s" onmouseover="this.style.color='white'" onmouseout="this.style.color='var(--gray)'">Driveway Cleaning</a>
+          <a href="services/exterior-painting.html" style="font-size:13px;color:var(--gray);transition:color .2s" onmouseover="this.style.color='white'" onmouseout="this.style.color='var(--gray)'">Exterior Painting</a>
+        </div>
+      </div>
+      <div>
+        <h5 style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--copper);margin-bottom:16px">Pages</h5>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <a href="gallery.html" style="font-size:13px;color:var(--gray);transition:color .2s" onmouseover="this.style.color='white'" onmouseout="this.style.color='var(--gray)'">Gallery</a>
+          <a href="service-areas.html" style="font-size:13px;color:var(--gray);transition:color .2s" onmouseover="this.style.color='white'" onmouseout="this.style.color='var(--gray)'">Service Areas</a>
+          <a href="about.html" style="font-size:13px;color:var(--gray);transition:color .2s" onmouseover="this.style.color='white'" onmouseout="this.style.color='var(--gray)'">About Us</a>
+          <a href="contact.html" style="font-size:13px;color:var(--gray);transition:color .2s" onmouseover="this.style.color='white'" onmouseout="this.style.color='var(--gray)'">Contact</a>
+        </div>
+      </div>
+      <div>
+        <h5 style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--copper);margin-bottom:16px">Locations</h5>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <a href="service-areas.html" style="font-size:13px;color:var(--gray)">Boca Raton</a>
+          <a href="service-areas.html" style="font-size:13px;color:var(--gray)">Delray Beach</a>
+          <a href="service-areas.html" style="font-size:13px;color:var(--gray)">Coral Springs</a>
+          <a href="service-areas.html" style="font-size:13px;color:var(--gray)">Fort Lauderdale</a>
+          <a href="service-areas.html" style="font-size:13px;color:var(--gray);color:var(--copper)">+ 11 More →</a>
+        </div>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,.06);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
+      <p style="font-size:12px;color:var(--gray)">© 2026 Your Business Corp. All rights reserved. <span style="margin-left:8px"><a href="privacy-policy.html" style="transition:color .2s" onmouseover="this.style.color='white'" onmouseout="this.style.color=''">Privacy Policy</a> &nbsp;|&nbsp; <a href="terms.html" style="transition:color .2s" onmouseover="this.style.color='white'" onmouseout="this.style.color=''">Terms of Service</a></span></p>
+      <div style="display:flex;gap:12px">
+        <a href="#" style="width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:16px;transition:all .25s" aria-label="Facebook" onmouseover="this.style.background='var(--red)'" onmouseout="this.style.background='rgba(255,255,255,.06)'">📘</a>
+        <a href="#" target="_blank" rel="noopener noreferrer" style="width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:16px;transition:all .25s" aria-label="Follow Your City on Instagram" onmouseover="this.style.background='var(--red)'" onmouseout="this.style.background='rgba(255,255,255,.06)'">📸</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<a href="tel:01414827035" id="sticky-call" aria-label="Call Your Business">📞</a>
+<a href="https://wa.me/01414827035?text=Hello!%20I%20would%20like%20to%20get%20a%20free%20estimate." id="whatsapp-btn" aria-label="WhatsApp" target="_blank">💬</a>
+<script src="js/main.js"></script>
+</body></html>
+
+
+
+
+
+

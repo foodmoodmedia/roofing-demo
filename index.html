@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Your Business | Premium Roof Cleaning & Pressure Washing</title>
+  <meta name="description" content="Your Business provides #1 rated roof cleaning, pressure washing, driveway cleaning & painting services. Professional service. Call +1 (555) 000-0000."/>
+  <link rel="canonical" href="index.html"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <style>
+    /* ── HOME PAGE SPECIFIC ── */
+    #hero{min-height:100vh;background:linear-gradient(135deg,#0F0F0F 0%,#1E2139 100%);display:flex;align-items:center;position:relative;overflow:hidden;padding-top:var(--nav-h)}
+    .hero-rays{position:absolute;inset:0;pointer-events:none;background:conic-gradient(from 0deg at 60% 50%,transparent 0deg,rgba(232,180,161,.06) 30deg,transparent 60deg,transparent 120deg,rgba(255,107,0,.04) 150deg,transparent 180deg,transparent 240deg,rgba(232,180,161,.06) 270deg,transparent 300deg,transparent 360deg);animation:rayExpand 25s linear infinite}
+    .hero-orb{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none;will-change:transform}
+    .hero-orb-1{width:600px;height:600px;background:rgba(255,107,0,.07);top:-100px;right:-100px;animation:float 8s ease-in-out infinite}
+    .hero-orb-2{width:400px;height:400px;background:rgba(30,33,57,.8);bottom:-50px;left:-50px;animation:float 11s ease-in-out infinite reverse}
+    .hero-inner{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:60px;position:relative;z-index:2;width:100%;max-width:1260px;margin:0 auto;padding:60px 40px 80px}
+    .hero-h1{font-family:'Sora',sans-serif;font-size:clamp(34px,4.5vw,60px);font-weight:800;letter-spacing:-.03em;line-height:1.06;margin-bottom:22px;opacity:0;animation:heroIn .7s var(--ease) .2s forwards}
+    .hero-h1 .grad{background:linear-gradient(90deg,#FF6B00,#FF4500);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .hero-sub{font-size:18px;color:var(--light);line-height:1.7;max-width:500px;margin-bottom:26px;opacity:0;animation:heroIn .7s var(--ease) .35s forwards}
+    .hero-trust{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:32px;opacity:0;animation:heroIn .5s var(--ease) .5s forwards}
+    .trust-pill{display:flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:.3px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:6px 14px;color:var(--light)}
+    .hero-btns{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:18px;opacity:0;animation:heroIn .5s var(--ease) .6s forwards}
+    .hero-micro{font-size:12px;color:var(--gray);opacity:0;animation:fadeIn .5s var(--ease) .75s forwards}
+    .hero-micro span{color:var(--copper);margin:0 4px}
+    /* 3D canvas wrapper */
+    .hero-canvas-wrap{position:relative;display:flex;align-items:center;justify-content:center;opacity:0;animation:fadeIn .8s var(--ease) .3s forwards}
+    #hero-canvas{width:100%;max-width:480px;height:480px;display:block}
+    .hero-ring{position:absolute;border-radius:50%;border:1px solid rgba(255,107,0,.15);animation:spin 22s linear infinite}
+    .hero-ring-1{width:calc(100% + 40px);height:calc(100% + 40px);top:-20px;left:-20px}
+    .hero-ring-2{width:calc(100% + 100px);height:calc(100% + 100px);top:-50px;left:-50px;border-style:dashed;border-color:rgba(232,180,161,.08);animation-direction:reverse;animation-duration:38s}
+    .hero-stat-badge{position:absolute;background:rgba(255,107,0,0.08);backdrop-filter:blur(20px);border:1px solid rgba(255,107,0,0.25);border-radius:16px;padding:12px 18px;display:flex;align-items:center;gap:10px;box-shadow:0 8px 32px rgba(0,0,0,0.3)}
+    .hbadge-1{top:30px;left:-10px;animation:float 4s ease-in-out .5s infinite;box-shadow:0 0 20px rgba(255,107,0,0.15)}
+    .hbadge-2{bottom:60px;right:-10px;animation:float 5.5s ease-in-out 1s infinite;box-shadow:0 0 20px rgba(255,107,0,0.15)}
+    .hb-val{font-size:16px;font-weight:700;line-height:1}
+    .hb-lbl{font-size:11px;color:var(--gray)}
+    /* SCROLL INDICATOR */
+    .scroll-cue{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.35);animation:float 2.5s ease-in-out infinite}
+    .scroll-line{width:1px;height:40px;background:linear-gradient(to bottom,rgba(255,107,0,.8),transparent)}
+    /* SERVICES STRIP */
+    .services-strip{background:linear-gradient(180deg,var(--bg-2,#1A1A1A) 0%,var(--bg) 100%);padding:100px 0}
+    /* WHY SECTION */
+    .why-section{background:#1A1A1A;padding:100px 0}
+    .why-image{width:100%;height:540px;object-fit:cover;border-radius:var(--radius);border:2px solid rgba(255,107,0,.3);box-shadow:0 40px 80px rgba(255,107,0,.12)}
+    .why-img-wrap{position:relative}
+    .why-badge{position:absolute;bottom:28px;left:28px;background:rgba(255,255,255,.1);backdrop-filter:blur(20px);border:1px solid var(--glass-border);border-radius:14px;padding:14px 18px;display:flex;align-items:center;gap:12px}
+    /* STATS ROW */
+    .stats-row{background:var(--navy);border-top:1px solid rgba(255,107,0,.1);border-bottom:1px solid rgba(255,107,0,.1)}
+    .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+    .stat-block+.stat-block{border-left:1px solid rgba(255,255,255,.06)}
+    /* BA PREVIEW */
+    .ba-preview{background:var(--bg);padding:100px 0}
+    /* TESTIMONIALS */
+    .testimonials-section{background:linear-gradient(135deg,var(--bg) 0%,var(--navy) 100%);padding:100px 0;overflow:hidden}
+    /* CTA BANNER */
+    .cta-banner{background:linear-gradient(135deg,#FF6B00,#FF4500);background-size:200% 200%;animation:gradientMove 10s ease infinite;padding:80px 40px;text-align:center}
+    .cta-banner h2{font-family:'Sora',sans-serif;font-size:clamp(28px,4vw,46px);font-weight:800;color:white;margin-bottom:14px;letter-spacing:-.02em}
+    .cta-banner p{font-size:18px;color:rgba(255,255,255,.9);margin-bottom:36px}
+    .cta-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+    .cta-btn-dark{background:#0F0F0F;color:var(--red);border:2px solid var(--red);padding:16px 36px;border-radius:14px;font-size:14px;font-weight:800;letter-spacing:1px;text-transform:uppercase;transition:all .3s var(--ease);display:inline-flex;align-items:center;gap:10px}
+    .cta-btn-dark:hover{background:var(--red);color:white;transform:scale(1.04)}
+    .cta-btn-white{background:rgba(255,255,255,.15);color:white;border:2px solid rgba(255,255,255,.4);padding:16px 36px;border-radius:14px;font-size:14px;font-weight:700;letter-spacing:1px;text-transform:uppercase;transition:all .3s;display:inline-flex;align-items:center;gap:10px}
+    .cta-btn-white:hover{background:rgba(255,255,255,.25);border-color:white;transform:scale(1.03)}
+
+    /* RESPONSIVE */
+    @media(max-width:768px){
+      .hero-inner{grid-template-columns:1fr;padding:60px 20px 100px}
+      #hero-canvas{max-width:300px;height:300px;margin:0 auto}
+      .hero-h1{font-size:clamp(28px,8vw,40px)}
+      .hero-btns{flex-direction:column}
+      .hero-btns .btn{justify-content:center;width:100%}
+      .stats-grid{grid-template-columns:repeat(2,1fr)}
+      .stat-block:nth-child(2){border-left:1px solid rgba(255,255,255,.06)}
+      .stat-block:nth-child(3){border-left:none;border-top:1px solid rgba(255,255,255,.06)}
+      .hbadge-1{left:10px;top:20px}
+      .hbadge-2{right:10px;bottom:30px}
+      #hero{padding-top:calc(var(--nav-h) + 20px)}
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── SHARED NAV ── -->
+<nav id="navbar" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><span>Your</span> Business</a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link active">Home</a>
+      <div class="nav-dropdown">
+        <a href="services/roof-cleaning.html" class="nav-link">Services ▾</a>
+        <div class="nav-dropdown-menu">
+          <a href="services/roof-cleaning.html" class="nav-dropdown-item">🏠 Roof Cleaning</a>
+          <a href="services/pressure-washing.html" class="nav-dropdown-item">💧 Pressure Washing</a>
+          <a href="services/driveway-cleaning.html" class="nav-dropdown-item">🛣️ Driveway Cleaning</a>
+          <a href="services/exterior-painting.html" class="nav-dropdown-item">🎨 Painting</a>
+        </div>
+      </div>
+      <a href="gallery.html" class="nav-link">Gallery</a>
+      <a href="service-areas.html" class="nav-link">Service Areas</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+    <a href="tel:15550000000" class="nav-cta">📞 +1 (555) 000-0000</a>
+    <div class="nav-mobile-toggle" id="nav-toggle" aria-label="Open menu" role="button" tabindex="0">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- ── MOBILE NAV ── -->
+<div class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+  <button class="mobile-nav-close" id="mobile-close" aria-label="Close menu">✕</button>
+  <a href="index.html" class="mobile-nav-link">Home</a>
+  <a href="services/roof-cleaning.html" class="mobile-nav-link">Roof Cleaning</a>
+  <a href="services/pressure-washing.html" class="mobile-nav-link">Pressure Washing</a>
+  <a href="services/driveway-cleaning.html" class="mobile-nav-link">Driveway Cleaning</a>
+  <a href="services/exterior-painting.html" class="mobile-nav-link">Painting</a>
+  <a href="gallery.html" class="mobile-nav-link">Gallery</a>
+  <a href="service-areas.html" class="mobile-nav-link">Service Areas</a>
+  <a href="about.html" class="mobile-nav-link">About</a>
+  <a href="contact.html" class="mobile-nav-link">Contact</a>
+  <a href="tel:15550000000" class="btn btn-primary btn-lg" style="margin-top:16px">📞 Call Now</a>
+</div>
+
+<!-- ── HERO ── -->
+<section id="hero" aria-label="Hero">
+  <div class="hero-rays" aria-hidden="true"></div>
+  <div class="hero-orb hero-orb-1" aria-hidden="true"></div>
+  <div class="hero-orb hero-orb-2" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-trust" role="list">
+        <div class="trust-pill" role="listitem">⭐ 152 5-Star Reviews</div>
+        <div class="trust-pill" role="listitem">🏆 15 Years Excellence</div>
+        <div class="trust-pill" role="listitem">✅ Licensed &amp; Insured</div>
+        <div class="trust-pill" role="listitem">🚀 24/7 Service</div>
+      </div>
+      <h1 class="hero-h1">
+        Professional <span class="grad">Roof Cleaning</span> &amp; Pressure Washing That <span class="grad">Transforms</span> Your Home
+      </h1>
+      <p class="hero-sub">
+        Join <strong>2,000+ happy homeowners</strong>. Same-day service. 100% satisfaction guaranteed.
+      </p>
+      <div class="hero-btns">
+        <a href="tel:15550000000" class="btn btn-primary btn-lg" id="hero-call-btn">📞 CALL NOW +1 (555) 000-0000</a>
+        <a href="contact.html" class="btn btn-secondary btn-lg" id="hero-estimate-btn">📋 GET FREE ESTIMATE</a>
+      </div>
+      <p class="hero-micro">Instant quote<span>•</span>No obligation<span>•</span>2-hour response</p>
+    </div>
+    <!-- THREE.JS CANVAS -->
+    <div class="hero-canvas-wrap" aria-hidden="true">
+      <div style="position:relative;width:100%;max-width:480px">
+        <div class="hero-ring hero-ring-1"></div>
+        <div class="hero-ring hero-ring-2"></div>
+        <canvas id="hero-canvas"></canvas>
+        <div class="hero-stat-badge hbadge-1"><span style="font-size:24px;filter:hue-rotate(90deg)">⭐</span><div><div class="hb-val">4.9/5</div><div class="hb-lbl">152 Reviews</div></div></div>
+        <div class="hero-stat-badge hbadge-2"><span style="font-size:24px;filter:hue-rotate(90deg)">⚡</span><div><div class="hb-val">Same Day</div><div class="hb-lbl">Service Available</div></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-cue" aria-hidden="true"><span>scroll</span><div class="scroll-line"></div></div>
+</section>
+
+<!-- ── STATS ROW ── -->
+<div class="stats-row">
+  <div class="stats-grid">
+    <div class="stat-block reveal stagger-1"><div class="stat-num" data-count="152" data-suffix="+">0+</div><div class="stat-label">5-Star Reviews</div></div>
+    <div class="stat-block reveal stagger-2"><div class="stat-num" data-count="2000" data-suffix="+">0+</div><div class="stat-label">Happy Homeowners</div></div>
+    <div class="stat-block reveal stagger-3"><div class="stat-num" data-count="15" data-suffix="+ Yrs">0</div><div class="stat-label">Years Experience</div></div>
+    <div class="stat-block reveal stagger-4"><div class="stat-num" data-count="4.9">0</div><div class="stat-label">Average Rating</div></div>
+  </div>
+</div>
+
+<!-- ── SERVICES STRIP ── -->
+<section class="services-strip" aria-label="Our services">
+  <div class="container">
+    <div class="center reveal">
+      <span class="section-tag">What We Do</span>
+      <h2 class="section-title">Our Premium Services</h2>
+      <p class="section-subtitle">Every service delivered with certified technicians, professional-grade equipment, and a 100% satisfaction guarantee.</p>
+    </div>
+    <div class="grid-5" style="margin-top:0">
+      <a href="services/roof-cleaning.html" class="service-card reveal stagger-1" style="text-decoration:none">
+        <div class="service-icon" aria-hidden="true">🏠</div>
+        <h3 class="service-name">Roof Cleaning</h3>
+        <p class="service-desc">Safe soft-wash method for all roof types. No damage, just results.</p>
+        <span class="service-cta">Learn More →</span>
+      </a>
+      <a href="services/pressure-washing.html" class="service-card reveal stagger-2" style="text-decoration:none">
+        <div class="service-icon" aria-hidden="true">💧</div>
+        <h3 class="service-name">Pressure Washing</h3>
+        <p class="service-desc">Professional cleaning for exteriors, pool decks, &amp; more.</p>
+        <span class="service-cta">Learn More →</span>
+      </a>
+      <a href="services/driveway-cleaning.html" class="service-card reveal stagger-3" style="text-decoration:none">
+        <div class="service-icon" aria-hidden="true">🛣️</div>
+        <h3 class="service-name">Driveway Cleaning</h3>
+        <p class="service-desc">Restore concrete to like-new in under 2 hours.</p>
+        <span class="service-cta">Learn More →</span>
+      </a>
+      <div class="service-card reveal stagger-4">
+        <div class="service-icon" aria-hidden="true">🏡</div>
+        <h3 class="service-name">Patio Cleaning</h3>
+        <p class="service-desc">Transform outdoor living spaces into pristine entertainment areas.</p>
+        <a href="contact.html" class="service-cta">Get Quote →</a>
+      </div>
+      <a href="services/exterior-painting.html" class="service-card reveal stagger-5" style="text-decoration:none">
+        <div class="service-icon" aria-hidden="true">🎨</div>
+        <h3 class="service-name">Interior &amp; Exterior Painting</h3>
+        <p class="service-desc">Premium finishes, perfect colors, lasting results.</p>
+        <span class="service-cta">Learn More →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── BEFORE/AFTER PREVIEW ── -->
+<section class="ba-preview" aria-label="Before and after transformations">
+  <div class="container">
+    <div class="center reveal">
+      <span class="section-tag">Real Transformations</span>
+      <h2 class="section-title">See The Transformation</h2>
+      <p class="section-subtitle">Drag the slider to reveal the stunning transformation. <a href="gallery.html" style="color:var(--copper)">View full gallery →</a></p>
+    </div>
+    <div class="grid-3">
+      <article class="ba-card reveal stagger-1">
+        <div class="ba-slider-wrap" data-slider>
+          <img class="ba-img ba-before-img" src="images/roof-before.jpg" alt="Dirty roof before cleaning"/>
+          <img class="ba-img ba-after-img" src="images/roof-after.jpg" alt="Clean roof after service"/>
+          <div class="ba-divider"></div><div class="ba-handle">⟺</div>
+          <div class="ba-label-before">BEFORE</div><div class="ba-label-after">AFTER</div>
+        </div>
+        <div class="ba-info"><div class="ba-tag">Roof Cleaning</div><h3 class="ba-title">Soft-Wash Roof Restoration</h3><p class="ba-stat">✨ +15 Years Life Expectancy</p></div>
+      </article>
+      <article class="ba-card reveal stagger-2">
+        <div class="ba-slider-wrap" data-slider>
+          <img class="ba-img ba-before-img" src="images/driveway-before.jpg" alt="Stained driveway before"/>
+          <img class="ba-img ba-after-img" src="images/driveway-after.jpg" alt="Clean driveway after"/>
+          <div class="ba-divider"></div><div class="ba-handle">⟺</div>
+          <div class="ba-label-before">BEFORE</div><div class="ba-label-after">AFTER</div>
+        </div>
+        <div class="ba-info"><div class="ba-tag">Pressure Washing</div><h3 class="ba-title">Driveway Deep Clean</h3><p class="ba-stat">⚡ Like New In Under 2 Hours</p></div>
+      </article>
+      <article class="ba-card reveal stagger-3">
+        <div class="ba-slider-wrap" data-slider>
+          <img class="ba-img ba-before-img" src="images/painting-before.jpg" alt="Faded exterior before painting"/>
+          <img class="ba-img ba-after-img" src="images/painting-after.jpg" alt="Fresh exterior after painting"/>
+          <div class="ba-divider"></div><div class="ba-handle">⟺</div>
+          <div class="ba-label-before">BEFORE</div><div class="ba-label-after">AFTER</div>
+        </div>
+        <div class="ba-info"><div class="ba-tag">Exterior Painting</div><h3 class="ba-title">Full Exterior Transformation</h3><p class="ba-stat">🏡 Increased Home Value</p></div>
+      </article>
+    </div>
+    <div style="text-align:center;margin-top:40px;"><a href="gallery.html" class="btn btn-secondary">View Full Gallery →</a></div>
+  </div>
+</section>
+
+<!-- ── WHY CHOOSE US ── -->
+<section class="why-section" aria-label="Why choose Your City">
+  <div class="container">
+    <div class="grid-2">
+      <div class="why-img-wrap reveal-left">
+        <img class="why-image" src="images/team.jpg" alt="Our Founders" onerror="this.closest('.why-img-wrap').innerHTML='<div style=\'height:540px;background:linear-gradient(135deg,#1E2139,#0F0F0F);border-radius:20px;border:2px solid rgba(255,107,0,.3);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px\'><div style=\'font-size:80px\'>👥</div><div style=\'text-align:center\'><strong style=\'font-size:22px\'>Our Founders</strong><br><span style=\'color:#7A7A7A\'>Expert Team</span></div></div>'"/>
+        <div class="why-badge"><span style="font-size:28px">🏆</span><div><p style="font-size:11px;color:var(--gray);text-transform:uppercase;letter-spacing:1px">Serving You</p><strong style="font-size:18px">Since 2009</strong></div></div>
+      </div>
+      <div class="reveal-right">
+        <span class="section-tag">Why Your City?</span>
+        <h2 class="section-title">Why Your City Homeowners <span class="gradient-text">Choose Us</span></h2>
+        <p class="section-subtitle">We're not just a service company — we're your neighbors, committed to keeping homes beautiful.</p>
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <div class="trust-point"><div class="tp-icon">✓</div><div class="tp-text"><h4>Certified &amp; Licensed</h4><p>Fully licensed with comprehensive insurance. You're protected.</p></div></div>
+          <div class="trust-point"><div class="tp-icon">⭐</div><div class="tp-text"><h4>152 Verified Reviews</h4><p>4.9 rating across Google &amp; Facebook. Real customers, real results.</p></div></div>
+          <div class="trust-point"><div class="tp-icon">🚀</div><div class="tp-text"><h4>24/7 Availability</h4><p>Emergency services, same-day appointments &amp; flexible scheduling.</p></div></div>
+          <div class="trust-point"><div class="tp-icon">💯</div><div class="tp-text"><h4>100% Satisfaction Guarantee</h4><p>Money-back guarantee. No questions asked. Your satisfaction is our only metric.</p></div></div>
+        </div>
+        <div style="margin-top:28px;display:flex;gap:14px;flex-wrap:wrap">
+          <a href="about.html" class="btn btn-secondary">Our Story →</a>
+          <a href="tel:15550000000" class="btn btn-primary">📞 Call Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TESTIMONIALS ── -->
+<section class="testimonials-section" aria-label="Customer testimonials">
+  <div class="container">
+    <div class="center reveal">
+      <span class="section-tag">Social Proof</span>
+      <h2 class="section-title">Real Results From Real Customers</h2>
+      <p class="section-subtitle">See why 2,000+ homeowners trust Your Business.</p>
+    </div>
+    <div id="testimonialsTrack" class="grid-3 reveal" role="list">
+      <article class="t-card" role="listitem"><div class="t-stars">★★★★★</div><p class="t-quote">"The team has been cleaning our roof for years. Fast, professional, always exceed expectations!"</p><p class="t-name">— Deborah K.</p><span class="t-location">📍 Your City</span></article>
+      <article class="t-card" role="listitem"><div class="t-stars">★★★★★</div><p class="t-quote">"Our driveway looks brand new after pressure washing. Incredible results at reasonable prices!"</p><p class="t-name">— Michael T.</p><span class="t-location">📍 Your City</span></article>
+      <article class="t-card" role="listitem"><div class="t-stars">★★★★★</div><p class="t-quote">"They painted our entire house exterior in 3 days. Quality work, very professional. Neighbors are asking!"</p><p class="t-name">— Joshua M.</p><span class="t-location">📍 Your City</span></article>
+      <article class="t-card" role="listitem"><div class="t-stars">★★★★★</div><p class="t-quote">"Same-day service that showed up same-day! The patio looks incredible. Highly recommend!"</p><p class="t-name">— Sandra L.</p><span class="t-location">📍 Your City</span></article>
+      <article class="t-card" role="listitem"><div class="t-stars">★★★★★</div><p class="t-quote">"Super professional and respectful of our property. Delivered beyond expectations. 5 stars isn't enough!"</p><p class="t-name">— Robert &amp; Maria V.</p><span class="t-location">📍 Your City</span></article>
+      <article class="t-card" role="listitem"><div class="t-stars">★★★★★</div><p class="t-quote">"Been using this service for 5 years. They're the only company I trust with my home. Reliable, affordable, perfect results."</p><p class="t-name">— Patricia H.</p><span class="t-location">📍 Your City</span></article>
+    </div>
+    <div class="carousel-nav" role="tablist" style="display:flex;justify-content:center;gap:10px;margin-top:36px">
+      <button class="carousel-dot active" role="tab" data-dot="0" aria-label="First set of reviews"></button>
+      <button class="carousel-dot" role="tab" data-dot="1" aria-label="Second set of reviews"></button>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA BANNER ── -->
+<div class="cta-banner" aria-label="Call to action">
+  <h2>Transform Your Home Today.</h2>
+  <p>Limited service slots available this month. Don't wait — your home deserves the best.</p>
+  <div class="cta-btns">
+    <a href="tel:15550000000" class="cta-btn-dark" id="cta-call-btn">📞 CALL NOW +1 (555) 000-0000</a>
+    <a href="contact.html" class="cta-btn-white">📋 GET FREE ESTIMATE</a>
+  </div>
+  <p style="margin-top:20px;font-size:12px;color:rgba(255,255,255,.65)">✓ 100% Free Estimate &nbsp;•&nbsp; No Obligation &nbsp;•&nbsp; 2-Hour Response</p>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer style="background:#080808;border-top:1px solid rgba(255,107,0,.12);padding:60px 0 32px" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div style="font-family:'Sora',sans-serif;font-size:22px;font-weight:800;margin-bottom:14px"><span style="color:var(--red)">Your</span> Business</div>
+        <p style="font-size:13px;color:var(--gray);max-width:260px;line-height:1.7;margin-bottom:16px">Your premier home transformation company. Trusted by local homeowners for quality roofing and cleaning.</p>
+        <a href="tel:15550000000" style="display:block;font-size:14px;color:var(--light);margin-bottom:8px">📞 +1 (555) 000-0000</a>
+        <a href="mailto:hello@yourwebsite.com" style="display:block;font-size:13px;color:var(--gray)">✉️ hello@yourwebsite.com</a>
+      </div>
+      <div>
+        <h5 style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--copper);margin-bottom:16px">Services</h5>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <a href="services/roof-cleaning.html" style="font-size:13px;color:var(--gray);transition:color .2s" onmouseover="this.style.color='white'" onmouseout="this.style.color='var(--gray)'">Roof Cleaning</a>
+          <a href="services/pressure-washing.html" style="font-size:13px;color:var(--gray);transition:color .2s" onmouseover="this.style.color='white'" onmouseout="this.style.color='var(--gray)'">Pressure Washing</a>
+          <a href="services/driveway-cleaning.html" style="font-size:13px;color:var(--gray);transition:color .2s" onmouseover="this.style.color='white'" onmouseout="this.style.color='var(--gray)'">Driveway Cleaning</a>
+          <a href="services/exterior-painting.html" style="font-size:13px;color:var(--gray);transition:color .2s" onmouseover="this.style.color='white'" onmouseout="this.style.color='var(--gray)'">Exterior Painting</a>
+        </div>
+      </div>
+      <div>
+        <h5 style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--copper);margin-bottom:16px">Pages</h5>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <a href="gallery.html" style="font-size:13px;color:var(--gray);transition:color .2s" onmouseover="this.style.color='white'" onmouseout="this.style.color='var(--gray)'">Gallery</a>
+          <a href="service-areas.html" style="font-size:13px;color:var(--gray);transition:color .2s" onmouseover="this.style.color='white'" onmouseout="this.style.color='var(--gray)'">Service Areas</a>
+          <a href="about.html" style="font-size:13px;color:var(--gray);transition:color .2s" onmouseover="this.style.color='white'" onmouseout="this.style.color='var(--gray)'">About Us</a>
+          <a href="contact.html" style="font-size:13px;color:var(--gray);transition:color .2s" onmouseover="this.style.color='white'" onmouseout="this.style.color='var(--gray)'">Contact</a>
+        </div>
+      </div>
+      <div>
+        <h5 style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--copper);margin-bottom:16px">Locations</h5>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <a href="service-areas.html" style="font-size:13px;color:var(--gray)">Area 1</a>
+          <a href="service-areas.html" style="font-size:13px;color:var(--gray)">Area 2</a>
+          <a href="service-areas.html" style="font-size:13px;color:var(--gray)">Area 3</a>
+          <a href="service-areas.html" style="font-size:13px;color:var(--gray)">Area 4</a>
+          <a href="service-areas.html" style="font-size:13px;color:var(--gray);color:var(--copper)">+ More Areas →</a>
+        </div>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,.06);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
+      <p style="font-size:12px;color:var(--gray)">© 2026 Your Business Corp. All rights reserved. <span style="margin-left:8px"><a href="privacy-policy.html" style="transition:color .2s" onmouseover="this.style.color='white'" onmouseout="this.style.color=''">Privacy Policy</a> &nbsp;|&nbsp; <a href="terms.html" style="transition:color .2s" onmouseover="this.style.color='white'" onmouseout="this.style.color=''">Terms of Service</a></span></p>
+      <div style="display:flex;gap:12px">
+        <a href="#" style="width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:16px;transition:all .25s" aria-label="Facebook" onmouseover="this.style.background='var(--red)'" onmouseout="this.style.background='rgba(255,255,255,.06)'">📘</a>
+        <a href="#" target="_blank" rel="noopener noreferrer" style="width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:16px;transition:all .25s" aria-label="Follow Your City on Instagram" onmouseover="this.style.background='var(--red)'" onmouseout="this.style.background='rgba(255,255,255,.06)'">📸</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a href="tel:15550000000" id="sticky-call" aria-label="Call Now">📞</a>
+<a href="https://wa.me/15550000000?text=Hello!%20I%20would%20like%20to%20get%20a%20free%20estimate." id="whatsapp-btn" aria-label="WhatsApp" target="_blank" rel="noopener">💬</a>
+
+<!-- THREE.JS CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<script>
+// THREE.JS HERO
+(function(){
+  const canvas = document.getElementById('hero-canvas');
+  if(!canvas || !window.THREE) return;
+  const W = canvas.clientWidth || 480, H = canvas.clientHeight || 480;
+  const renderer = new THREE.WebGLRenderer({canvas, alpha:true, antialias:true});
+  renderer.setSize(W, H); renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
+  renderer.shadowMap.enabled = true;
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(45, W/H, 0.1, 100);
+  camera.position.set(0, 1, 5);
+
+  // House group
+  const house = new THREE.Group();
+
+  // Body
+  const bodyGeo = new THREE.BoxGeometry(2, 1.4, 1.8);
+  const bodyMat = new THREE.MeshPhongMaterial({color:0xF5F0E8, shininess:30});
+  const body = new THREE.Mesh(bodyGeo, bodyMat);
+  body.position.y = 0; body.castShadow = true;
+  house.add(body);
+
+  // Roof
+  const roofGeo = new THREE.ConeGeometry(1.7, 1, 4);
+  const roofMat = new THREE.MeshPhongMaterial({color:0xCC5500, shininess:20});
+  const roof = new THREE.Mesh(roofGeo, roofMat);
+  roof.position.y = 1.15; roof.rotation.y = Math.PI/4; roof.castShadow = true;
+  house.add(roof);
+
+  // Chimney
+  const chiGeo = new THREE.BoxGeometry(0.2, 0.6, 0.2);
+  const chiMat = new THREE.MeshPhongMaterial({color:0x333333});
+  const chi = new THREE.Mesh(chiGeo, chiMat);
+  chi.position.set(0.55, 1.55, -0.3); house.add(chi);
+
+  // Door
+  const doorGeo = new THREE.BoxGeometry(0.35, 0.65, 0.05);
+  const doorMat = new THREE.MeshPhongMaterial({color:0x8B4513});
+  const door = new THREE.Mesh(doorGeo, doorMat);
+  door.position.set(0, -0.38, 0.93); house.add(door);
+
+  // Windows (2)
+  const winGeo = new THREE.BoxGeometry(0.4, 0.35, 0.05);
+  const winMat = new THREE.MeshPhongMaterial({color:0xA8D8F0, emissive:0xFFE080, emissiveIntensity:0.2});
+  [-0.6, 0.6].forEach(x => {
+    const w = new THREE.Mesh(winGeo, winMat);
+    w.position.set(x, 0.18, 0.93); house.add(w);
+  });
+
+  // Garage
+  const garGeo = new THREE.BoxGeometry(0.8, 0.65, 0.04);
+  const garMat = new THREE.MeshPhongMaterial({color:0xD0C8B8});
+  const gar = new THREE.Mesh(garGeo, garMat);
+  gar.position.set(-0.65, -0.38, 0.93); house.add(gar);
+
+  house.position.y = 0;
+  scene.add(house);
+
+  // Ground plane
+  const groundGeo = new THREE.CircleGeometry(3, 32);
+  const groundMat = new THREE.MeshPhongMaterial({color:0xFF6B00, transparent:true, opacity:0.06});
+  const ground = new THREE.Mesh(groundGeo, groundMat);
+  ground.rotation.x = -Math.PI/2; ground.position.y = -1.05; scene.add(ground);
+
+  // Lights
+  const ambient = new THREE.AmbientLight(0xffffff, 0.5); scene.add(ambient);
+  const key = new THREE.DirectionalLight(0xFFD580, 1.2);
+  key.position.set(3, 5, 4); key.castShadow = true; scene.add(key);
+  const rim = new THREE.DirectionalLight(0xFF6B00, 0.4);
+  rim.position.set(-4, 2, -3); scene.add(rim);
+  const fill = new THREE.PointLight(0xFF6B00, 0.3, 8);
+  fill.position.set(0, 3, 3); scene.add(fill);
+
+  // Mouse tracking
+  let mx = 0, my = 0;
+  canvas.closest('section')?.addEventListener('mousemove', e => {
+    const r = canvas.getBoundingClientRect();
+    mx = (e.clientX - r.left - r.width/2) / r.width;
+    my = (e.clientY - r.top - r.height/2) / r.height;
+  });
+
+  // Animate
+  let t = 0;
+  const tick = () => {
+    requestAnimationFrame(tick);
+    t += 0.008;
+    house.rotation.y += (mx * 0.5 - house.rotation.y) * 0.05;
+    house.position.y = 0 + Math.sin(t) * 0.12;
+    house.rotation.x += (my * -0.2 - house.rotation.x) * 0.05;
+    fill.intensity = 0.3 + Math.sin(t * 2) * 0.1;
+    renderer.render(scene, camera);
+  };
+  tick();
+
+  // Resize
+  window.addEventListener('resize', () => {
+    const nw = canvas.clientWidth, nh = canvas.clientHeight;
+    camera.aspect = nw/nh;
+    camera.updateProjectionMatrix();
+    renderer.setSize(nw, nh);
+  });
+})();
+</script>
+<script src="js/main.js"></script>
+</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Service Areas | Your Business | Professional Roofing in Your City</title>
+  <meta name="description"
+    content="Your Business serves the entire Your City area and surrounding communities. Professional roofing services you can trust. Call +1 (555) 000-0000." />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .areas-grid {
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      gap: 60px;
+      align-items: start
+    }
+
+    .city-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 40px
+    }
+
+    .city-card {
+      background: rgba(30, 33, 57, .8);
+      border: 1px solid rgba(255, 107, 0, .15);
+      border-radius: 14px;
+      padding: 20px 16px;
+      text-align: center;
+      transition: all .3s var(--ease);
+      cursor: pointer
+    }
+
+    .city-card:hover,
+    .city-card.active {
+      border-color: rgba(255, 107, 0, .5);
+      background: rgba(255, 107, 0, .08);
+      transform: translateY(-4px)
+    }
+
+    .city-card-name {
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 4px
+    }
+
+    .city-card-time {
+      font-size: 11px;
+      color: var(--gray)
+    }
+
+    .coverage-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--red-glass);
+      border: 1px solid rgba(255, 107, 0, .25);
+      border-radius: 30px;
+      padding: 8px 18px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--copper);
+      margin-bottom: 32px
+    }
+
+    @media(max-width:1024px) {
+      .areas-grid {
+        grid-template-columns: 1fr
+      }
+    }
+
+    @media(max-width:600px) {
+      .city-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo"><span>Your City</span> General Services</a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <div class="nav-dropdown"><a href="services/roof-cleaning.html" class="nav-link">Services ▾</a>
+          <div class="nav-dropdown-menu">
+            <a href="services/roof-cleaning.html" class="nav-dropdown-item">🏠 Roof Cleaning</a>
+            <a href="services/pressure-washing.html" class="nav-dropdown-item">💧 Pressure Washing</a>
+            <a href="services/driveway-cleaning.html" class="nav-dropdown-item">🛣️ Driveway Cleaning</a>
+            <a href="services/exterior-painting.html" class="nav-dropdown-item">🎨 Painting</a>
+          </div>
+        </div>
+        <a href="gallery.html" class="nav-link">Gallery</a>
+        <a href="service-areas.html" class="nav-link active">Service Areas</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </div>
+      <a href="tel:01414827035" class="nav-cta">📞 +1 (555) 000-0000</a>
+      <div class="nav-mobile-toggle" id="nav-toggle"><span></span><span></span><span></span></div>
+    </div>
+  </nav>
+  <div class="mobile-nav" id="mobile-nav"><button class="mobile-nav-close" id="mobile-close">✕</button>
+    <a href="index.html" class="mobile-nav-link">Home</a><a href="services/roof-cleaning.html"
+      class="mobile-nav-link">Services</a>
+    <a href="gallery.html" class="mobile-nav-link">Gallery</a><a href="service-areas.html"
+      class="mobile-nav-link">Service Areas</a>
+    <a href="about.html" class="mobile-nav-link">About</a><a href="contact.html" class="mobile-nav-link">Contact</a>
+    <a href="tel:01414827035" class="btn btn-primary btn-lg" style="margin-top:16px">📞 Call Now</a>
+  </div>
+
+  <section class="page-hero">
+    <div class="page-hero-orb page-hero-orb-1" aria-hidden="true"></div>
+    <div class="page-hero-orb page-hero-orb-2" aria-hidden="true"></div>
+    <div class="container">
+      <div class="page-hero-content">
+        <div class="breadcrumb"><a href="index.html">Home</a><span class="breadcrumb-sep">/</span><span>Service
+            Areas</span></div>
+        <div class="page-hero-badge">📍 Where We Serve</div>
+        <h1>Proudly Serving <span class="gradient-text">Your City</span></h1>
+        <p>From the West End to the Southside — Your Business delivers fast, professional service across all Your City
+          communities.</p>
+        <div class="page-hero-ctas">
+          <a href="tel:01414827035" class="btn btn-primary btn-lg">📞 CALL +1 (555) 000-0000</a>
+          <a href="contact.html" class="btn btn-secondary btn-lg">Check Your Area</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAP + CITY SIDEBAR -->
+  <section class="section" style="background:#1A1A1A">
+    <div class="container">
+      <div class="areas-grid">
+        <div class="reveal-left">
+          <span class="section-tag">Interactive Map</span>
+          <h2 class="section-title" style="margin-bottom:8px">Our <span class="gradient-text">Coverage Area</span></h2>
+          <p style="font-size:15px;color:var(--gray);margin-bottom:24px">All cities in Your City and Scotland County
+            served with the same 2–4 hour response standard.</p>
+          <div class="map-container">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15712993.008533638!2d-103.52870269725352!3d40.631192255293556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54eab584e432360b%3A0x1c3bb99243deb742!2sUnited%20States!5e1!3m2!1sen!2sin!4v1777198989375!5m2!1sen!2sin"
+              width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+          </div>
+        </div>
+        <div class="reveal-right">
+          <span class="section-tag">Service Cities</span>
+          <h3 style="font-size:22px;font-weight:700;margin-bottom:4px">15+ Cities Served</h3>
+          <p style="font-size:13px;color:var(--gray);margin-bottom:20px">Click a city to see it on map. Contact us to
+            confirm availability in your area.</p>
+          <nav class="city-list" aria-label="Cities served">
+            <div class="city-item active" tabindex="0" role="button"><span style="font-size:14px">📍</span><span
+                class="city-name">West End</span><span class="city-time">~10 min</span></div>
+            <div class="city-item" tabindex="0" role="button"><span style="font-size:14px">📍</span><span
+                class="city-name">Southside</span><span class="city-time">~15 min</span></div>
+            <div class="city-item" tabindex="0" role="button"><span style="font-size:14px">📍</span><span
+                class="city-name">City Centre</span><span class="city-time">~8 min</span></div>
+            <div class="city-item" tabindex="0" role="button"><span style="font-size:14px">📍</span><span
+                class="city-name">East End</span><span class="city-time">~12 min</span></div>
+            <div class="city-item" tabindex="0" role="button"><span style="font-size:14px">📍</span><span
+                class="city-name">Bearsden</span><span class="city-time">~15 min</span></div>
+            <div class="city-item" tabindex="0" role="button"><span style="font-size:14px">📍</span><span
+                class="city-name">Milngavie</span><span class="city-time">~18 min</span></div>
+            <div class="city-item" tabindex="0" role="button"><span style="font-size:14px">📍</span><span
+                class="city-name">Newton Mearns</span><span class="city-time">~20 min</span></div>
+            <div class="city-item" tabindex="0" role="button"><span style="font-size:14px">📍</span><span
+                class="city-name">Giffnock</span><span class="city-time">~15 min</span></div>
+            <div class="city-item" tabindex="0" role="button"><span style="font-size:14px">📍</span><span
+                class="city-name">Paisley</span><span class="city-time">~20 min</span></div>
+            <div class="city-item" tabindex="0" role="button"><span style="font-size:14px">📍</span><span
+                class="city-name">Clydebank</span><span class="city-time">~15 min</span></div>
+            <div class="city-item" tabindex="0" role="button"><span style="font-size:14px">📍</span><span
+                class="city-name">Rutherglen</span><span class="city-time">~12 min</span></div>
+            <div class="city-item" tabindex="0" role="button"><span style="font-size:14px">📍</span><span
+                class="city-name">Bishopbriggs</span><span class="city-time">~10 min</span></div>
+          </nav>
+          <a href="contact.html" class="btn btn-primary btn-full" style="margin-top:20px">Request Service In Your
+            City</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CITIES CARD GRID -->
+  <section class="section" style="background:var(--bg)">
+    <div class="container">
+      <div class="center reveal">
+        <span class="section-tag">All Service Cities</span>
+        <h2 class="section-title">Your City Serves <span class="gradient-text">These Communities</span></h2>
+        <p class="section-subtitle">Professional home services with the same fast response time and 5-star quality — no
+          matter where you are in Your City.</p>
+      </div>
+      <div class="city-grid">
+
+        <div class="city-card reveal stagger-1">
+          <div style="font-size:20px;margin-bottom:6px">📍</div>
+          <div class="city-card-name">West End</div>
+          <div class="city-card-time">~10 min response</div>
+        </div>
+        <div class="city-card reveal stagger-2">
+          <div style="font-size:20px;margin-bottom:6px">📍</div>
+          <div class="city-card-name">Southside</div>
+          <div class="city-card-time">~15 min response</div>
+        </div>
+        <div class="city-card reveal stagger-3">
+          <div style="font-size:20px;margin-bottom:6px">📍</div>
+          <div class="city-card-name">City Centre</div>
+          <div class="city-card-time">~8 min response</div>
+        </div>
+        <div class="city-card reveal">
+          <div style="font-size:20px;margin-bottom:6px">📍</div>
+          <div class="city-card-name">East End</div>
+          <div class="city-card-time">~12 min response</div>
+        </div>
+        <div class="city-card reveal">
+          <div style="font-size:20px;margin-bottom:6px">📍</div>
+          <div class="city-card-name">Bearsden</div>
+          <div class="city-card-time">~15 min response</div>
+        </div>
+        <div class="city-card reveal">
+          <div style="font-size:20px;margin-bottom:6px">📍</div>
+          <div class="city-card-name">Milngavie</div>
+          <div class="city-card-time">~18 min response</div>
+        </div>
+        <div class="city-card reveal">
+          <div style="font-size:20px;margin-bottom:6px">📍</div>
+          <div class="city-card-name">Newton Mearns</div>
+          <div class="city-card-time">~20 min response</div>
+        </div>
+        <div class="city-card reveal">
+          <div style="font-size:20px;margin-bottom:6px">📍</div>
+          <div class="city-card-name">Giffnock</div>
+          <div class="city-card-time">~15 min response</div>
+        </div>
+        <div class="city-card reveal">
+          <div style="font-size:20px;margin-bottom:6px">📍</div>
+          <div class="city-card-name">Paisley</div>
+          <div class="city-card-time">~20 min response</div>
+        </div>
+        <div class="city-card reveal">
+          <div style="font-size:20px;margin-bottom:6px">📍</div>
+          <div class="city-card-name">Clydebank</div>
+          <div class="city-card-time">~15 min response</div>
+        </div>
+        <div class="city-card reveal">
+          <div style="font-size:20px;margin-bottom:6px">📍</div>
+          <div class="city-card-name">Rutherglen</div>
+          <div class="city-card-time">~12 min response</div>
+        </div>
+        <div class="city-card reveal">
+          <div style="font-size:20px;margin-bottom:6px">📍</div>
+          <div class="city-card-name">Bishopbriggs</div>
+          <div class="city-card-time">~10 min response</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div style="background:linear-gradient(135deg,#FF6B00,#00FF7F);padding:80px 40px;text-align:center">
+    <h2
+      style="font-family:'Sora',sans-serif;font-size:clamp(24px,3vw,40px);color:white;margin-bottom:12px;font-weight:800">
+      Don't See Your City?</h2>
+    <p style="color:rgba(255,255,255,.9);font-size:16px;margin-bottom:28px">We may still be able to serve you! Call or
+      message us and we'll let you know right away.</p>
+    <a href="tel:01414827035"
+      style="background:#0F0F0F;color:var(--red);border:2px solid var(--red);padding:16px 40px;border-radius:12px;font-size:15px;font-weight:800;letter-spacing:1px;text-transform:uppercase;display:inline-flex;align-items:center;gap:10px">📞
+      CALL +1 (555) 000-0000</a>
+  </div>
+  <footer style="background:#080808;border-top:1px solid rgba(255,107,0,.12);padding:60px 0 32px" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div style="font-family:'Sora',sans-serif;font-size:22px;font-weight:800;margin-bottom:14px"><span
+              style="color:var(--red)">Your City</span> Roofing</div>
+          <p style="font-size:13px;color:var(--gray);max-width:260px;line-height:1.7;margin-bottom:16px">Your City's
+            premier home transformation company. Trusted by local homeowners for quality roofing and cleaning.</p>
+          <a href="tel:01414827035" style="display:block;font-size:14px;color:var(--light);margin-bottom:8px">📞 +1
+            (555) 000-0000</a>
+          <a href="mailto:hello@yourwebsite.com" style="display:block;font-size:13px;color:var(--gray)">✉️
+            hello@yourwebsite.com</a>
+        </div>
+        <div>
+          <h5
+            style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--copper);margin-bottom:16px">
+            Services</h5>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <a href="services/roof-cleaning.html" style="font-size:13px;color:var(--gray);transition:color .2s"
+              onmouseover="this.style.color='white'" onmouseout="this.style.color='var(--gray)'">Roof Cleaning</a>
+            <a href="services/pressure-washing.html" style="font-size:13px;color:var(--gray);transition:color .2s"
+              onmouseover="this.style.color='white'" onmouseout="this.style.color='var(--gray)'">Pressure Washing</a>
+            <a href="services/driveway-cleaning.html" style="font-size:13px;color:var(--gray);transition:color .2s"
+              onmouseover="this.style.color='white'" onmouseout="this.style.color='var(--gray)'">Driveway Cleaning</a>
+            <a href="services/exterior-painting.html" style="font-size:13px;color:var(--gray);transition:color .2s"
+              onmouseover="this.style.color='white'" onmouseout="this.style.color='var(--gray)'">Exterior Painting</a>
+          </div>
+        </div>
+        <div>
+          <h5
+            style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--copper);margin-bottom:16px">
+            Pages</h5>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <a href="gallery.html" style="font-size:13px;color:var(--gray);transition:color .2s"
+              onmouseover="this.style.color='white'" onmouseout="this.style.color='var(--gray)'">Gallery</a>
+            <a href="service-areas.html" style="font-size:13px;color:var(--gray);transition:color .2s"
+              onmouseover="this.style.color='white'" onmouseout="this.style.color='var(--gray)'">Service Areas</a>
+            <a href="about.html" style="font-size:13px;color:var(--gray);transition:color .2s"
+              onmouseover="this.style.color='white'" onmouseout="this.style.color='var(--gray)'">About Us</a>
+            <a href="contact.html" style="font-size:13px;color:var(--gray);transition:color .2s"
+              onmouseover="this.style.color='white'" onmouseout="this.style.color='var(--gray)'">Contact</a>
+          </div>
+        </div>
+        <div>
+          <h5
+            style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--copper);margin-bottom:16px">
+            Locations</h5>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <a href="service-areas.html" style="font-size:13px;color:var(--gray)">Boca Raton</a>
+            <a href="service-areas.html" style="font-size:13px;color:var(--gray)">Delray Beach</a>
+            <a href="service-areas.html" style="font-size:13px;color:var(--gray)">Coral Springs</a>
+            <a href="service-areas.html" style="font-size:13px;color:var(--gray)">Fort Lauderdale</a>
+            <a href="service-areas.html" style="font-size:13px;color:var(--gray);color:var(--copper)">+ 11 More →</a>
+          </div>
+        </div>
+      </div>
+      <div
+        style="border-top:1px solid rgba(255,255,255,.06);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
+        <p style="font-size:12px;color:var(--gray)">© 2026 Your Business Corp. All rights reserved. <span
+            style="margin-left:8px"><a href="privacy-policy.html" style="transition:color .2s"
+              onmouseover="this.style.color='white'" onmouseout="this.style.color=''">Privacy Policy</a> &nbsp;|&nbsp;
+            <a href="terms.html" style="transition:color .2s" onmouseover="this.style.color='white'"
+              onmouseout="this.style.color=''">Terms of Service</a></span></p>
+        <div style="display:flex;gap:12px">
+          <a href="#"
+            style="width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:16px;transition:all .25s"
+            aria-label="Facebook" onmouseover="this.style.background='var(--red)'"
+            onmouseout="this.style.background='rgba(255,255,255,.06)'">📘</a>
+          <a href="#" target="_blank" rel="noopener noreferrer"
+            style="width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:16px;transition:all .25s"
+            aria-label="Follow Your City on Instagram" onmouseover="this.style.background='var(--red)'"
+            onmouseout="this.style.background='rgba(255,255,255,.06)'">📸</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <a href="tel:01414827035" id="sticky-call" aria-label="Call Your Business">📞</a>
+  <a href="https://wa.me/01414827035?text=Hello!%20I%20would%20like%20to%20get%20a%20free%20estimate." id="whatsapp-btn"
+    aria-label="WhatsApp" target="_blank">💬</a>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
